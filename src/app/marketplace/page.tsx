@@ -1,48 +1,56 @@
 import Image from "next/image";
 
 const categories = [
-  { name: "Fresh Produce", image: "/produce-category.jpg", href: "/produce" },
-  { name: "Farm Equipment", image: "/equipment-category.jpg", href: "/equipment" },
-  { name: "AI Solutions", image: "/ai-solutions-category.jpg", href: "/ai-solutions" },
-  { name: "Farm Designs", image: "/design-category.jpg", href: "/designs" },
+  { name: "Fresh Produce", icon: "leaf", href: "/produce", color: "bg-green-600" },
+  { name: "Farm Equipment", icon: "tool", href: "/equipment", color: "bg-blue-600" },
+  { name: "AI Solutions", icon: "robot", href: "/ai-solutions", color: "bg-purple-600" },
+  { name: "Farm Designs", icon: "layout", href: "/designs", color: "bg-orange-600" },
 ];
 
 const featuredItems = [
   {
     id: 1,
     name: "Organic Tomatoes",
-    image: "/tomatoes.jpg",
+    icon: "seedling",
     price: "0.05 ETH",
     seller: "FarmToTable",
     location: "Sicily, Italy",
     category: "produce",
+    color: "bg-red-100 dark:bg-red-900/30",
+    iconColor: "text-red-500"
   },
   {
     id: 2,
     name: "Harvesting Drone",
-    image: "/drone.jpg",
+    icon: "flight-takeoff",
     price: "2.3 ETH",
     seller: "TechFarm",
     location: "San Francisco, USA",
     category: "equipment",
+    color: "bg-blue-100 dark:bg-blue-900/30",
+    iconColor: "text-blue-500"
   },
   {
     id: 3,
     name: "Vertical Farm Design",
-    image: "/vertical-farm.jpg",
+    icon: "building",
     price: "1.8 ETH",
     seller: "GreenArchitects",
     location: "Singapore",
     category: "design",
+    color: "bg-green-100 dark:bg-green-900/30",
+    iconColor: "text-green-500"
   },
   {
     id: 4,
     name: "AI Crop Monitoring",
-    image: "/ai-crop.jpg",
+    icon: "cpu-line",
     price: "0.9 ETH",
     seller: "DataHarvest",
     location: "Tel Aviv, Israel",
     category: "ai",
+    color: "bg-purple-100 dark:bg-purple-900/30",
+    iconColor: "text-purple-500"
   },
 ];
 
@@ -59,19 +67,10 @@ export default function Marketplace() {
             <a
               key={category.name}
               href={category.href}
-              className="relative rounded-lg overflow-hidden group h-40"
+              className={`relative rounded-lg overflow-hidden group h-32 ${category.color} flex flex-col items-center justify-center text-white transition-transform hover:scale-105 duration-300`}
             >
-              <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-30 transition-opacity"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="text-white text-xl font-bold text-center">{category.name}</h3>
-              </div>
-              <Image
-                src={category.image}
-                alt={category.name}
-                layout="fill"
-                objectFit="cover"
-                className="transition-transform group-hover:scale-105 duration-300"
-              />
+              <i className={`ri-${category.icon}-line text-4xl mb-2`} aria-hidden="true"></i>
+              <h3 className="text-lg font-bold text-center">{category.name}</h3>
             </a>
           ))}
         </div>
@@ -87,13 +86,8 @@ export default function Marketplace() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredItems.map((item) => (
             <div key={item.id} className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-              <div className="relative h-48">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  layout="fill"
-                  objectFit="cover"
-                />
+              <div className={`h-40 ${item.color} flex items-center justify-center`}>
+                <i className={`ri-${item.icon} text-5xl ${item.iconColor}`} aria-hidden="true"></i>
               </div>
               <div className="p-4">
                 <h3 className="font-medium text-lg">{item.name}</h3>

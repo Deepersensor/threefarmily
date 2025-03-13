@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import Image from 'next/image';
 
 export default function AIHelper() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,10 +35,7 @@ export default function AIHelper() {
           <div className="p-3 bg-green-600 text-white font-medium flex justify-between items-center">
             <span>AI Farm Assistant</span>
             <button onClick={toggleHelper} className="text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
+              <i className="ri-close-line text-xl" aria-hidden="true"></i>
             </button>
           </div>
           <div className="h-72 overflow-y-auto p-3 space-y-3">
@@ -63,10 +59,7 @@ export default function AIHelper() {
               type="submit"
               className="bg-green-600 text-white p-2 rounded-r-lg"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
+              <i className="ri-send-plane-fill" aria-hidden="true"></i>
             </button>
           </form>
         </div>
@@ -75,13 +68,7 @@ export default function AIHelper() {
         onClick={toggleHelper} 
         className="h-14 w-14 rounded-full bg-green-600 hover:bg-green-700 text-white flex items-center justify-center shadow-lg transition-colors"
       >
-        <Image
-          src="/ai-bot.svg"
-          alt="AI Helper"
-          width={28}
-          height={28}
-          className="invert"
-        />
+        <i className="ri-robot-line text-2xl" aria-hidden="true"></i>
       </button>
     </div>
   );

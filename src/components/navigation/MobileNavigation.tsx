@@ -1,12 +1,11 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 const mobileNavItems = [
-  { name: 'Home', href: '/', icon: '/home.svg' },
-  { name: 'Marketplace', href: '/marketplace', icon: '/marketplace.svg' },
-  { name: 'Produce', href: '/produce', icon: '/produce.svg' },
-  { name: 'Chat', href: '/chat', icon: '/chat.svg' },
-  { name: 'Profile', href: '/profile', icon: '/user.svg' },
+  { name: 'Marketplace', href: '/marketplace', icon: 'shopping-bag' },
+  { name: 'Produce', href: '/produce', icon: 'leaf' },
+  { name: 'Equipment', href: '/equipment', icon: 'tool' },
+  { name: 'Designs', href: '/designs', icon: 'layout' },
+  { name: 'Profile', href: '/profile', icon: 'user' },
 ];
 
 export default function MobileNavigation() {
@@ -19,13 +18,7 @@ export default function MobileNavigation() {
             href={item.href}
             className="flex flex-col items-center justify-center w-16"
           >
-            <Image
-              src={item.icon}
-              alt={item.name}
-              width={24}
-              height={24}
-              className="dark:invert"
-            />
+            <i className={`ri-${item.icon}-line text-xl`} aria-hidden="true"></i>
             <span className="text-xs mt-1">{item.name}</span>
           </Link>
         ))}
