@@ -8,7 +8,7 @@ export default function TopBar() {
       <div className="md:hidden mr-3">
         <Link href="/marketplace">
           <Image
-            src="/images/logo.png"
+            src="/images/threefarmily3.png"
             alt="Logo"
             width={32}
             height={32}
