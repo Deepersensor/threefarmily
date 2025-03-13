@@ -15,7 +15,7 @@ export default function Sidebar() {
       <div className="p-4 border-b border-gray-200 dark:border-gray-800">
         <Link href="/marketplace" className="flex items-center">
           <Image
-            src="/images/logo.png"
+            src="/images/threefarmily3.png"
             alt="Logo"
             width={40}
             height={40}
