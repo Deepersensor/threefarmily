@@ -1,41 +1,34 @@
 'use client';
-import { useWallet } from '../../contexts/WalletContext';
+
+import { useWallet } from '@/contexts/WalletContext';
 
 export default function WalletBanner() {
-  const { wallet, connecting, connectWallet, error } = useWallet();
+  const { wallet, connecting, connectWallet } = useWallet();
   
-  if (wallet.connected) return null;
+  if (wallet.connected) {
+    return (
+      <div className="bg-green-100 dark:bg-green-900/30 py-2 px-4 flex items-center justify-center text-sm">
+        <i className="ri-wallet-3-line text-green-600 mr-2"></i>
+        <span className="text-green-800 dark:text-green-300">
+          Connected: {`${wallet.address?.slice(0, 6)}...${wallet.address?.slice(-4)}`}
+        </span>
+      </div>
+    );
+  }
   
   return (
-    <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6">
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-        <div className="mb-4 md:mb-0">
-          <h3 className="font-medium text-blue-800 dark:text-blue-300 mb-1">Connect to the Flare Network</h3>
-          <p className="text-sm text-blue-700 dark:text-blue-400">
-            Connect your wallet to buy, sell and trade farming products on the blockchain
-          </p>
-          {error && (
-            <p className="text-sm text-red-600 dark:text-red-400 mt-1">{error}</p>
-          )}
-        </div>
-        <button
-          onClick={connectWallet}
-          disabled={connecting}
-          className="flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors"
-        >
-          {connecting ? (
-            <>
-              <i className="ri-loader-4-line animate-spin mr-2"></i>
-              Connecting...
-            </>
-          ) : (
-            <>
-              <i className="ri-wallet-3-line mr-2"></i>
-              Connect Wallet
-            </>
-          )}
-        </button>
-      </div>
+    <div className="bg-yellow-100 dark:bg-yellow-900/30 py-2 px-4 flex items-center justify-between text-sm">
+      <span className="text-yellow-800 dark:text-yellow-300">
+        <i className="ri-wallet-3-line mr-2"></i>
+        Wallet not connected
+      </span>
+      <button 
+        onClick={connectWallet}
+        disabled={connecting}
+        className="text-xs bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-md transition-colors"
+      >
+        {connecting ? 'Connecting...' : 'Connect'}
+      </button>
     </div>
   );
 }

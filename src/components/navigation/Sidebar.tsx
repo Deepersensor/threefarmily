@@ -1,13 +1,35 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import { useWallet } from '../../contexts/WalletContext';
+import { useWallet } from '@/contexts/WalletContext';
 
 const navigationItems = [
-  { name: 'Marketplace', href: '/marketplace', icon: 'shopping-bag' },
-  { name: 'Fresh Produce', href: '/produce', icon: 'leaf' },
-  { name: 'Equipment', href: '/equipment', icon: 'tool' },
-  { name: 'Farm Designs', href: '/designs', icon: 'layout' },
-  { name: 'Profile', href: '/profile', icon: 'user' },
+  { 
+    name: 'Marketplace', 
+    href: '/marketplace', 
+    icon: 'shopping-bag' 
+  },
+  { 
+    name: 'Fresh Produce', 
+    href: '/produce', 
+    icon: 'leaf' 
+  },
+  { 
+    name: 'Equipment', 
+    href: '/equipment', 
+    icon: 'tool' 
+  },
+  { 
+    name: 'Farm Designs', 
+    href: '/designs', 
+    icon: 'layout' 
+  },
+  { 
+    name: 'Profile', 
+    href: '/profile', 
+    icon: 'user' 
+  },
 ];
 
 export default function Sidebar() {
@@ -48,13 +70,13 @@ export default function Sidebar() {
             <div className="px-3 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg">
               <div className="flex items-center text-sm">
                 <i className="ri-wallet-3-line mr-2 text-green-500"></i>
-                <span className="font-medium truncate">{formatAddress(wallet.address!)}</span>
+                <span className="font-medium truncate">{formatAddress(wallet.address)}</span>
               </div>
               <div className="text-xs text-gray-500 mt-1">
                 Flare Network (Chain ID: {wallet.chainId})
               </div>
             </div>
-            <button 
+            <button
               onClick={disconnectWallet}
               className="w-full flex items-center justify-center px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors"
             >
@@ -62,8 +84,8 @@ export default function Sidebar() {
             </button>
           </div>
         ) : (
-          <button 
-            onClick={connectWallet} 
+          <button
+            onClick={connectWallet}
             disabled={connecting}
             className="w-full flex items-center justify-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
           >

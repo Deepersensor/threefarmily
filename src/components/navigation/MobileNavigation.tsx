@@ -1,5 +1,7 @@
+'use client';
+
 import Link from 'next/link';
-import { useWallet } from '../../contexts/WalletContext';
+import { useWallet } from '@/contexts/WalletContext';
 
 const mobileNavItems = [
   { name: 'Marketplace', href: '/marketplace', icon: 'shopping-bag' },
