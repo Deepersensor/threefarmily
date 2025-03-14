@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from "next/image";
+import WalletBanner from '../../components/wallet/WalletBanner';
 
 const categories = [
   { name: "Fresh Produce", icon: "leaf", href: "/produce", color: "bg-green-600" },
@@ -182,6 +183,9 @@ export default function Marketplace() {
           </button>
         </div>
       </div>
+      
+      {/* Wallet Connect Banner */}
+      <WalletBanner />
       
       {/* Featured banner */}
       <div className="relative rounded-xl overflow-hidden h-48 mb-12 bg-gradient-to-r from-green-700 to-green-500">
