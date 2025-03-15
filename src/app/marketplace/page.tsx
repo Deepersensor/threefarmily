@@ -3,10 +3,10 @@ import Image from "next/image";
 import WalletBanner from '../../components/wallet/WalletBanner';
 
 const categories = [
-  { name: "Fresh Produce", icon: "leaf", href: "/produce", color: "bg-green-600" },
-  { name: "Farm Equipment", icon: "tool", href: "/equipment", color: "bg-blue-600" },
-  { name: "AI Solutions", icon: "robot", href: "/ai-solutions", color: "bg-purple-600" },
-  { name: "Farm Designs", icon: "layout", href: "/designs", color: "bg-orange-600" },
+  { name: "AI Chat", icon: "message", href: "/chat", color: "bg-green-600" },
+  { name: "Farm Equipment", icon: "tool", href: "/marketplace/equipment", color: "bg-blue-600" },
+  { name: "AI Solutions", icon: "robot", href: "/marketplace/ai-solutions", color: "bg-purple-600" },
+  { name: "Farm Designs", icon: "layout", href: "/marketplace/designs", color: "bg-orange-600" },
 ];
 
 const featuredItems = [
