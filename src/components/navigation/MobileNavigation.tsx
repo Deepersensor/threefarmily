@@ -5,7 +5,7 @@ import { useWallet } from '@/contexts/WalletContext';
 
 const mobileNavItems = [
   { name: 'Marketplace', href: '/marketplace', icon: 'shopping-bag' },
-  { name: 'Produce', href: '/produce', icon: 'leaf' },
+  { name: 'AI Chat', href: '/chat', icon: 'message' },
   { name: 'Equipment', href: '/equipment', icon: 'tool' },
   { name: 'Designs', href: '/designs', icon: 'layout' },
   { name: 'Profile', href: '/profile', icon: 'user' },

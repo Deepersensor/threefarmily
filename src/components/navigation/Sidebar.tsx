@@ -11,9 +11,9 @@ const navigationItems = [
     icon: 'shopping-bag' 
   },
   { 
-    name: 'Fresh Produce', 
-    href: '/produce', 
-    icon: 'leaf' 
+    name: 'AI Chat', 
+    href: '/chat', 
+    icon: 'message' 
   },
   { 
     name: 'Equipment', 
